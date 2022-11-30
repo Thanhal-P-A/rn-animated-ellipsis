@@ -1,19 +1,20 @@
 {
   "name": "rn-animated-ellipsis",
   "version": "2.0.2",
-  "description": "A simple, customizable animated dots component for use in React Native apps. Ideal for loading screens.",
+  "description": "A simple, customizable animated dots component ideal for loading screens in React Native apps.",
   "main": "dist/AnimatedEllipsis.js",
-  "scripts": {
-    "build": "babel src/ -d dist",
-    "prepare": "npm run build"
+  "author": {
+    "name": "Thanhal P A",
+    "email": "thanhalpa@gmail.com"
   },
-  "author": "Thanhal P A <thanhalpa@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thanhal-p-a/rn-animated-ellipsis.git"
   },
   "homepage": "https://github.com/thanhal-p-a/rn-animated-ellipsis",
   "license": "MIT",
+  "licenseFilename": "LICENSE",
+  "readmeFilename": "README.md",
   "dependencies": {
     "prop-types": "^15.5.10",
     "babel-preset-stage-2": "^6.24.1",
