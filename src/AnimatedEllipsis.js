@@ -1,6 +1,7 @@
-import React, { Component }    from 'react';
-import { Text, Animated, View, StyleSheet }      from 'react-native';
-import PropTypes               from 'prop-types';
+import React, { Component } from 'react';
+import { Animated, View, StyleSheet } from 'react-native';
+import { TextPropTypes } from 'deprecated-react-native-prop-types';
+import PropTypes from 'prop-types';
 
 
 export default class AnimatedEllipsis extends Component {
@@ -8,7 +9,7 @@ export default class AnimatedEllipsis extends Component {
     numberOfDots: PropTypes.number,
     animationDelay: PropTypes.number,
     minOpacity: PropTypes.number,
-    style: Text.propTypes.style,
+    style: TextPropTypes.style,
   };
 
   static defaultProps = {
@@ -69,7 +70,7 @@ export default class AnimatedEllipsis extends Component {
     }).start(this.animate_dots.bind(this, next_dot));
   }
 
-  render () {
+  render() {
     let dots = this._animation_state.dot_opacities.map((o, i) =>
       <Animated.Text key={i} style={[this.props.style, { opacity: o }]}>
         {' '}

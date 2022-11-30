@@ -1,17 +1,21 @@
 # React Native Animated Ellipsis
-A simple, customizable animated dots component for use in React Native apps. Ideal for loading screens.
+A simple, customizable animated dots component for use in React Native apps (forked from adorableio/react-native-animated-ellipsis). Ideal for loading screens.
 
 ![Kinda like iOS](https://raw.githubusercontent.com/wiki/adorableio/react-native-animated-ellipsis/images/example_ios_ish.gif)
 
 
 ## Installation
+using npm
 ```shell
-npm install --save react-native-animated-ellipsis
+npm install rn-animated-ellipsis
 ```
-
+or using yarn
+```shell
+yarn add rn-animated-ellipsis
+```
 ## Importing
 ```js
-import AnimatedEllipsis from 'react-native-animated-ellipsis';
+import AnimatedEllipsis from 'rn-animated-ellipsis';
 ```
 
 ## Usage
@@ -59,12 +63,13 @@ Customize the number of dots, animation speed, and style using these props:
 ![Complex Example](https://raw.githubusercontent.com/wiki/adorableio/react-native-animated-ellipsis/images/example_four_red_dots.gif)
 
 ```jsx
-<AnimatedEllipsis numberOfDots={4}
-                  animationDelay={150}
-                  style={{
-                    color: 'red',
-                    fontSize: 72,
-                  }}
+<AnimatedEllipsis 
+  numberOfDots={4}
+  animationDelay={150}
+  style={{
+    color: 'red',
+    fontSize: 72,
+  }}
 />
 ```
 
@@ -73,13 +78,14 @@ Customize the number of dots, animation speed, and style using these props:
 ![Kinda like iOS](https://raw.githubusercontent.com/wiki/adorableio/react-native-animated-ellipsis/images/example_ios_ish.gif)
 
 ```jsx
-<AnimatedEllipsis numberOfDots={3}
-                  minOpacity={0.4}
-                  animationDelay={200}
-                  style={{
-                    color: '#94939b',
-                    fontSize: 100,
-                    letterSpacing: -15,
-                  }}
+<AnimatedEllipsis 
+  numberOfDots={3}
+  minOpacity={0.4}
+  animationDelay={200}
+  style={{
+    color: '#94939b',
+    fontSize: 100,
+    letterSpacing: -15,
+  }}
   />
 ```
