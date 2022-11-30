@@ -10,6 +10,7 @@ export default class AnimatedEllipsis extends Component {
     animationDelay: PropTypes.number,
     minOpacity: PropTypes.number,
     style: TextPropTypes.style,
+    useNativeDriver: PropTypes.bool
   };
 
   static defaultProps = {
@@ -19,7 +20,8 @@ export default class AnimatedEllipsis extends Component {
     style: {
       color: '#aaa',
       fontSize: 32,
-    }
+    },
+    useNativeDriver: true
   };
 
   constructor(props) {
@@ -67,6 +69,7 @@ export default class AnimatedEllipsis extends Component {
     Animated.timing(this._animation_state.dot_opacities[which_dot], {
       toValue: this._animation_state.target_opacity,
       duration: this.props.animationDelay,
+      useNativeDriver: this.props.useNativeDriver,
     }).start(this.animate_dots.bind(this, next_dot));
   }
 
