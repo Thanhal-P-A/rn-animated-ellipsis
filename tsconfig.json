@@ -1,0 +1,14 @@
+{
+  "include": ["*"],
+
+  "compilerOptions": {
+    // Read JS files as source
+    "allowJs": true,
+    // Generate .d.ts files
+    "declaration": true,
+    // Compiler run should only output .d.ts files
+    "emitDeclarationOnly": true,
+    // Let 'Go to definition'-type IDE functions find our js files
+    "declarationMap": true,
+  }
+}
