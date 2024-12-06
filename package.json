@@ -1,28 +1,38 @@
 {
-  "name": "rn-animated-ellipsis",
-  "version": "2.1.3",
-  "description": "A simple, customizable animated dots component ideal for loading screens in React Native apps.",
+  "name": "@reagankm/rn-animated-ellipsis",
+  "version": "2.2.0",
+  "description": "An updated version of rn-animated-ellipsis, a simple, customizable animated dots component ideal for loading screens in React Native apps.",
   "main": "index.js",
+  "types": "index.d.ts",
   "author": {
-    "name": "Thanhal P A",
-    "email": "thanhalpa@gmail.com"
+    "name": "Reagan Middlebrook",
+    "email": "reagankm@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thanhal-p-a/rn-animated-ellipsis.git"
+    "url": "git+https://github.com/reagankm/rn-animated-ellipsis.git"
   },
-  "homepage": "https://github.com/thanhal-p-a/rn-animated-ellipsis",
+  "bugs": {
+    "url": "https://github.com/reagankm/rn-animated-ellipsis/issues"
+  },
+  "homepage": "https://github.com/reagankm/rn-animated-ellipsis",
   "license": "MIT",
   "licenseFilename": "LICENSE",
   "readmeFilename": "README.md",
   "dependencies": {
-    "babel-preset-stage-2": "^6.24.1",
     "deprecated-react-native-prop-types": "^2.3.0",
     "prop-types": "^15.5.10"
   },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-native": ">=0.70.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "babel-plugin-transform-react-jsx": "^6.24.1",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "@types/react": "^18.0.0",
+    "@types/react-native": "^0.70.0"
   }
 }
