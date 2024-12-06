@@ -1,14 +1,17 @@
 {
-  "include": ["*"],
-
+  //"extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
-    // Read JS files as source
-    "allowJs": true,
-    // Generate .d.ts files
-    "declaration": true,
-    // Compiler run should only output .d.ts files
-    "emitDeclarationOnly": true,
-    // Let 'Go to definition'-type IDE functions find our js files
-    "declarationMap": true,
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+
+    /* Completeness */
+    //"skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
+    "jsx": "react-native",
+    "moduleResolution": "node",
+    "strictBindCallApply": true,
+    "allowSyntheticDefaultImports": true
+    //"strict": false, /* Started getting opinionated about dumb shit */
+    //"suppressImplicitAnyIndexErrors": true,
+    //"noImplicitAny": false,
+    //"noImplicitThis": false,
   }
 }
