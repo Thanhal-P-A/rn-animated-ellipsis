@@ -1,17 +1,30 @@
 {
-  //"extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
-    /* Visit https://aka.ms/tsconfig.json to read more about this file */
-
-    /* Completeness */
-    //"skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
-    "jsx": "react-native",
-    "moduleResolution": "node",
-    "strictBindCallApply": true,
-    "allowSyntheticDefaultImports": true
-    //"strict": false, /* Started getting opinionated about dumb shit */
-    //"suppressImplicitAnyIndexErrors": true,
-    //"noImplicitAny": false,
-    //"noImplicitThis": false,
+    "rootDir": ".",
+    "paths": {
+      "rn-animated-ellipsis": ["./src/index"]
+    },
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "lib": ["ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": false,
+    "noStrictGenericChecks": false,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "resolvePackageJsonImports": false,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ESNext",
+    "verbatimModuleSyntax": true
   }
 }
