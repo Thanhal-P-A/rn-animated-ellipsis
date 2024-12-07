@@ -49,9 +49,12 @@ const AnimatedEllipsis: React.FC<Props> = ({
                                                style = defaultStyle,
                                                useNativeDriver = true,
                                            }: Props): React.JSX.Element => {
+    // Ensure non-negative dots
+    const validatedNumberOfDots = Math.max(0, numberOfDots);
+
     const isMountedRef = React.useRef(true);
     const targetOpacityRef = React.useRef<number>(initialTargetOpacity);
-    const dotOpacitiesRef = React.useRef<Animated.Value[]>(initializeDots(numberOfDots, minOpacity));
+    const dotOpacitiesRef = React.useRef<Animated.Value[]>(initializeDots(validatedNumberOfDots, minOpacity));
 
     const animateDots = React.useCallback(
         (currentDot: number): void => {
@@ -79,15 +82,19 @@ const AnimatedEllipsis: React.FC<Props> = ({
 
     useEffect(() => {
         isMountedRef.current = true;
-        animateDots(0);
+
+        if (validatedNumberOfDots > 0) {
+            animateDots(0);
+        }
 
         return () => {
             isMountedRef.current = false;
+            dotOpacitiesRef.current.forEach(opacity => opacity.stopAnimation());
         };
-    }, [animateDots]);
+    }, [animateDots, numberOfDots]);
 
     useEffect(() => {
-        dotOpacitiesRef.current = initializeDots(numberOfDots, minOpacity);
+        dotOpacitiesRef.current = initializeDots(validatedNumberOfDots, minOpacity);
     }, [numberOfDots, minOpacity]);
 
     return (
