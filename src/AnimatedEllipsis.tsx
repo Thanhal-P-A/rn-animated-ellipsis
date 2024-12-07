@@ -1,4 +1,4 @@
-import React, { type PropsWithChildren, useEffect, useState } from 'react';
+import React, { type PropsWithChildren, useEffect } from 'react';
 import {
     Animated,
     type StyleProp,
@@ -14,12 +14,6 @@ type Props = PropsWithChildren<{
     style?: StyleProp<TextStyle>;
     useNativeDriver?: boolean;
 }>;
-
-interface AnimationState {
-    dotOpacities: Animated.Value[];
-    targetOpacity: number;
-    shouldAnimate: boolean;
-}
 
 const initializeDots = (
     numberOfDots: number,
@@ -41,78 +35,64 @@ const styles = StyleSheet.create({
     },
 });
 
+const initialTargetOpacity: number = 1;
+
+const defaultStyle: TextStyle = {
+    color: '#aaa',
+    fontSize: 32,
+};
+
 const AnimatedEllipsis: React.FC<Props> = ({
                                                numberOfDots = 3,
                                                animationDelay = 300,
                                                minOpacity = 0,
-                                               style = {
-                                                   color: '#aaa',
-                                                   fontSize: 32,
-                                               } as TextStyle,
+                                               style = defaultStyle,
                                                useNativeDriver = true,
                                            }: Props): React.JSX.Element => {
-    const [animationState, setAnimationState] = useState<AnimationState>(() => {
-        return {
-            dotOpacities: initializeDots(numberOfDots, minOpacity),
-            targetOpacity: 1,
-            shouldAnimate: true,
-        };
-    });
+    const isMountedRef = React.useRef(true);
+    const targetOpacityRef = React.useRef<number>(initialTargetOpacity);
+    const dotOpacitiesRef = React.useRef<Animated.Value[]>(initializeDots(numberOfDots, minOpacity));
 
     const animateDots = React.useCallback(
         (currentDot: number): void => {
-            if (!animationState.shouldAnimate) return;
+            if (!isMountedRef.current) return;
 
-            // Swap fade direction when we hit the end of the list
-            if (currentDot >= animationState.dotOpacities.length) {
-                const oppositeOpacity =
-                    animationState.targetOpacity === minOpacity
-                        ? 1
-                        : minOpacity;
-
-                setAnimationState((previousState: AnimationState) => ({
-                    ...previousState,
-                    targetOpacity: oppositeOpacity,
-                }));
+            if (currentDot >= dotOpacitiesRef.current.length) {
+                currentDot = 0;
+                targetOpacityRef.current = targetOpacityRef.current === minOpacity ? 1 : minOpacity;
             }
 
             const nextDot = currentDot + 1;
 
-            if (currentDot >= animationState.dotOpacities.length) {
-                throw new Error(
-                    `currentDot ${currentDot} is bigger than dotOpacities length: ${animationState.dotOpacities.length}`
-                );
-            }
-
-            Animated.timing(animationState.dotOpacities[currentDot]!, {
-                toValue: animationState.targetOpacity,
+            Animated.timing(dotOpacitiesRef.current[currentDot]!, {
+                toValue: targetOpacityRef.current,
                 duration: animationDelay,
                 useNativeDriver: useNativeDriver,
             }).start(() => animateDots(nextDot));
         },
         [
-            animationState.shouldAnimate,
-            animationState.dotOpacities,
-            animationState.targetOpacity,
             animationDelay,
             useNativeDriver,
-            minOpacity,
+            minOpacity
         ]
     );
 
     useEffect(() => {
+        isMountedRef.current = true;
         animateDots(0);
+
         return () => {
-            setAnimationState((previousState: AnimationState) => ({
-                ...previousState,
-                shouldAnimate: false,
-            }));
+            isMountedRef.current = false;
         };
     }, [animateDots]);
 
+    useEffect(() => {
+        dotOpacitiesRef.current = initializeDots(numberOfDots, minOpacity);
+    }, [numberOfDots, minOpacity]);
+
     return (
         <View style={styles.container}>
-            {animationState.dotOpacities.map((opacity, index) => (
+            {dotOpacitiesRef.current.map((opacity, index) => (
                 <Animated.Text
                     key={index}
                     style={[style, { opacity: opacity }]}
