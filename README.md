@@ -12,15 +12,15 @@ React Native apps (forked from Thanhal-P-A/rn-animated-ellipsis - not maintained
 ## Installation
 using npm
 ```shell
-npm install rn-animated-ellipsis
+npm install @reagankm/rn-animated-ellipsis
 ```
 or using yarn
 ```shell
-yarn add rn-animated-ellipsis
+yarn add @reagankm/rn-animated-ellipsis
 ```
 ## Importing
 ```js
-import AnimatedEllipsis from 'rn-animated-ellipsis';
+import AnimatedEllipsis from '@reagankm/rn-animated-ellipsis';
 ```
 
 ## Usage
