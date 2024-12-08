@@ -1,18 +1,23 @@
 {
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "**/__tests__/**", "**/*.test.ts", "**/*.test.tsx"],
   "compilerOptions": {
-    "rootDir": ".",
-    "paths": {
-      "rn-animated-ellipsis": ["./src/index"]
-    },
+    "outDir": "dist",
+    "rootDir": "src",
+    "target": "ESNext",
+    "jsx": "react-jsx",
+    "lib": ["ES2017", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "sourceMap": true,
+
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react-jsx",
-    "lib": ["ESNext"],
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noImplicitUseStrict": false,
@@ -23,6 +28,5 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "ESNext",
   }
 }
