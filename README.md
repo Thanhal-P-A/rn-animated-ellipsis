@@ -1,12 +1,3 @@
-# rn-animated-ellipsis-extended
-
-This is a fork of [rn-animated-ellipsis](https://github.com/Thanhal-P-A/rn-animated-ellipsis) by
-[Thanhal-P-A](https://github.com/Thanhal-P-A), which is a fork of
-[react-native-animated-ellipsis](https://github.com/adorableio/react-native-animated-ellipsis) 
-by [adorableio](https://github.com/adorableio). 
-
-This fork includes TypeScript types and additional updates.
-
 # React Native Animated Ellipsis
 
 A simple, customizable animated dots component ideal for loading screens in 
@@ -104,3 +95,11 @@ Customize the number of dots, animation speed, and style using these props:
   }}
 />
 ```
+
+This is a fork of [rn-animated-ellipsis](https://github.com/Thanhal-P-A/rn-animated-ellipsis) by
+[Thanhal-P-A](https://github.com/Thanhal-P-A), which is a fork of
+[react-native-animated-ellipsis](https://github.com/adorableio/react-native-animated-ellipsis) 
+by [adorableio](https://github.com/adorableio). 
+
+This fork includes TypeScript types and additional updates.
+
