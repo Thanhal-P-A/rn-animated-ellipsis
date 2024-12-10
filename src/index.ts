@@ -1,1 +1,1 @@
-export { default as AnimatedEllipsis } from './AnimatedEllipsis';
+export { default } from './AnimatedEllipsis';
