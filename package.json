@@ -1,6 +1,6 @@
 {
   "name": "@reagankm/rn-animated-ellipsis",
-  "version": "2.2.10",
+  "version": "2.2.11",
   "description": "An updated version of rn-animated-ellipsis, a simple, customizable animated dots component ideal for loading screens in React Native apps.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
