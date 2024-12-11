@@ -71,7 +71,7 @@ const AnimatedEllipsis: React.FC<Props> = ({
                 toValue: targetOpacityRef.current,
                 duration: animationDelay,
                 useNativeDriver: useNativeDriver,
-            }).start(() => animateDots(nextDot));
+            } as Animated.TimingAnimationConfig).start(() => animateDots(nextDot));
         },
         [
             animationDelay,
@@ -93,10 +93,6 @@ const AnimatedEllipsis: React.FC<Props> = ({
         };
     }, [animateDots, numberOfDots]);
 
-    useEffect(() => {
-        dotOpacitiesRef.current = initializeDots(validatedNumberOfDots, minOpacity);
-    }, [numberOfDots, minOpacity]);
-
     return (
         <View style={styles.container}>
             {dotOpacitiesRef.current.map((opacity, index) => (
@@ -109,7 +105,7 @@ const AnimatedEllipsis: React.FC<Props> = ({
                 </Animated.Text>
             ))}
         </View>
-    ) as React.JSX.Element;
+    ) as React.ReactElement;
 };
 
 export default AnimatedEllipsis;
