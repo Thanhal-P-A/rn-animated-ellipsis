@@ -1,21 +1,26 @@
 # React Native Animated Ellipsis
-A simple, customizable animated dots component ideal for loading screens in React Native apps (forked from adorableio/react-native-animated-ellipsis - not maintained).
+
+A simple, customizable animated dots component ideal for loading screens in 
+React Native apps (forked from Thanhal-P-A/rn-animated-ellipsis - not maintained).
 
 ![Kinda like iOS](https://raw.githubusercontent.com/wiki/adorableio/react-native-animated-ellipsis/images/example_ios_ish.gif)
 
+## Supported Versions
+- **React:** >=18.0.0
+- **React Native:** >=0.70.0
 
 ## Installation
 using npm
 ```shell
-npm install rn-animated-ellipsis
+npm install @reagankm/rn-animated-ellipsis
 ```
 or using yarn
 ```shell
-yarn add rn-animated-ellipsis
+yarn add @reagankm/rn-animated-ellipsis
 ```
 ## Importing
 ```js
-import AnimatedEllipsis from 'rn-animated-ellipsis';
+import AnimatedEllipsis from '@reagankm/rn-animated-ellipsis';
 ```
 
 ## Usage
@@ -90,3 +95,11 @@ Customize the number of dots, animation speed, and style using these props:
   }}
 />
 ```
+
+This is a fork of [rn-animated-ellipsis](https://github.com/Thanhal-P-A/rn-animated-ellipsis) by
+[Thanhal-P-A](https://github.com/Thanhal-P-A), which is a fork of
+[react-native-animated-ellipsis](https://github.com/adorableio/react-native-animated-ellipsis) 
+by [adorableio](https://github.com/adorableio). 
+
+This fork includes TypeScript types and additional updates.
+
